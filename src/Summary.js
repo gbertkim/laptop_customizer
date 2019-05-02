@@ -7,8 +7,9 @@ class Summary extends Component {
       Object.keys(this.props.selected).map(key => 
         <SelectedList 
           key={key}
-          sillyName={key} 
+          id={key}
           selected={this.props.selected}
+          name={this.props.selected[key].name}
           cost={this.props.selected[key].cost}
         />
       )

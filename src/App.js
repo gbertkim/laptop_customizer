@@ -39,7 +39,6 @@ class App extends Component {
   }
 
   render() {
-    //Component for the Parts List
     return (
       
       <div className="App">
@@ -58,7 +57,6 @@ class App extends Component {
               <Summary selected={this.state.selected}/>
               <Total selected={this.state.selected}/>
           </section>
-
         </main>
       </div>
     );

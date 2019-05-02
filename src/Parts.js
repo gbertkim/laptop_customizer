@@ -8,23 +8,24 @@ class Parts extends Component {
                 const options = this.props.features[key].map((item, index) => {
                     const selectedClass = item.name === this.props.selected[key].name ? 'feature__selected' : '';
                     const featureClass = 'feature__option ' + selectedClass;
+                    const itemKey = key
                     return (
                         <ListItem 
                             index={index}
                             item={item}
-                            key={key}
+                            itemKey={itemKey}
                             featureClass={featureClass}
-                            handleUpdate={(key,item)=>this.props.handleUpdate(key,item)}
+                            handleUpdate={(key, item) => this.props.handleUpdate(key, item)}
                         />
                     )
-
                 });
-                return <div className="feature" key={key}>
-                <div className="feature__name">{key}</div>
-                <ul className="feature__list">
-                    { options }
-                </ul>
-                </div>
+                return (
+                <div className="feature" key={key}>
+                    <div className="feature__name">{key}</div>
+                    <ul className="feature__list">
+                        { options }
+                    </ul>
+                </div>)
             })      
         )
     }       
